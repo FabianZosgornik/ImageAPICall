@@ -12,9 +12,7 @@
   class ImageAPICall extends HTMLElement {
     constructor() {
       super();
-      this._export_settings = {};
-      this._export_settings.apiurl = "";
-      this._export_settings.imageurl = "";
+      this.apiurl = "https://camelot-itlab-gmbh-camelot-itlab-gmbh-cf-business-analyte17ab0d.cfapps.eu10.hana.ondemand.com/bdw-spotify-featured/newSpotifyData()";
 
       this._shadowRoot = this.attachShadow({ mode: "open" });
       this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
@@ -29,7 +27,7 @@
     callAPI() {
       console.log(this._export_settings.apiurl);
       $.ajax({
-        url: this._export_settings.apiurl,
+        url: this.apiurl,
         type: "POST",
         contentType: "application/x-www-form-urlencoded",
       });
@@ -39,8 +37,8 @@
 
     set setAPIUrl(value) {
       console.log(value);
-      this._export_settings.apiurl = value;
-      console.log(this._export_settings.apiurl);
+      this.apiurl = value;
+      console.log(this.apiurl);
     }
 
     set imageUrl(value) {
