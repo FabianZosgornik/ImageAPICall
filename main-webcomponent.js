@@ -18,17 +18,12 @@
       this._shadowRoot = this.attachShadow({ mode: "open" });
       this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-      this._export_settings = {};
-      this._export_settings.apiurl = "";
-      this._export_settings.imageurl = "";
-
       this._props = {};
 
       console.log(this._props);
 
       this.addEventListener("click", (event) => {
         var event = new Event("onClick");
-        console.log(this._props);
         //this.callAPI();
         this.dispatchEvent(event);
       });
@@ -40,7 +35,6 @@
 
     onCustomWidgetBeforeUpdate(changedProperties) {
       this._props = { ...this._props, ...changedProperties };
-      console.log("before");
       console.log(changedProperties);
     }
 
@@ -51,14 +45,13 @@
       console.log(changedProperties);
 
       this._shadowRoot.getElementById("image").src =
-        this._export_settings.imageurl;
-      this._export_settings.apiurl = this._export_settings.apiurl;
+        this.__props.imageurl;
     }
 
     callAPI() {
-      console.log(this._export_settings.apiurl);
+      console.log(this._props.apiurl);
       $.ajax({
-        url: this._export_settings.apiurl,
+        url: this._props.apiurl,
         type: "GET",
         dataType: "jsonp",
         contentType: "application/x-www-form-urlencoded",
@@ -69,8 +62,8 @@
 
     set setAPIUrl(value) {
       console.log(value);
-      this._export_settings.apiurl = value;
-      console.log(this._export_settings.apiurl);
+      this._props.apiurl = value;
+      console.log(this._props.apiurl);
     }
 
     set imageUrl(value) {
