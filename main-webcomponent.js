@@ -4,10 +4,25 @@
     <style>
       image {
         width: 100%;
-        height: 100%;
       }
     </style>
-    <img id="image" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
+    <form id="form" autocomplete="off">
+        <fieldset> 
+          <legend>General</legend>
+          <table>
+            <tr>
+              <td><label for="REST API URL">REST API URL</label></td>
+              <td><input id="restapiurl" name="restapiurl" type="text"></td>
+            </tr>
+            <tr>
+              <td><label for="Widget Name">Widget Name</label></td>
+              <td><input id="name" name="name" type="text"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <button type="submit" hidden>Submit</button>
+      </form>
+      <img id="image" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
     `;
   
   class ImageAPICall extends HTMLElement {
