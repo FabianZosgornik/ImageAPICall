@@ -25,7 +25,7 @@
     }
 
     callAPI() {
-      console.log(this._export_settings.apiurl);
+      console.log(this.apiurl);
       $.ajax({
         url: this.apiurl,
         type: "POST",
