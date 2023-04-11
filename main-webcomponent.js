@@ -1,8 +1,15 @@
 (function () {
   let tmpl = document.createElement("template");
   tmpl.innerHTML = `
-        <img id="image" src="" alt="">
+    <style>
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <img id="image" src="" alt="">
     `;
+  
   class ImageAPICall extends HTMLElement {
     constructor() {
       this._export_settings = {};
