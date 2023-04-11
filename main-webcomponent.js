@@ -26,12 +26,13 @@
 
     callAPI() {
       console.log(this.apiurl);
-      $.ajax({
-        url: this.apiurl,
-        type: "POST",
-        dataType: "jsonp",
-        contentType: "application/x-www-form-urlencoded",
-      });
+      window.location = this.apiurl;
+//       $.ajax({
+//         url: this.apiurl,
+//         type: "POST",
+//         dataType: "jsonp",
+//         contentType: "application/x-www-form-urlencoded",
+//       });
     }
 
     // Settings
