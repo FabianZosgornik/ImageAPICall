@@ -12,7 +12,7 @@
   class ImageAPICall extends HTMLElement {
     constructor() {
       super();
-      this.apiurl = "https://camelot-itlab-gmbh-camelot-itlab-gmbh-cf-business-analyte17ab0d.cfapps.eu10.hana.ondemand.com/bdw-spotify-featured/newSpotifyData()";
+      this.apiurl = "https://camelot-itlab-gmbh-camelot-itlab-gmbh-cf-business-analy17752ce5.cfapps.eu10.hana.ondemand.com/bwd-spotify-get/newSpotifyData()";
 
       this._shadowRoot = this.attachShadow({ mode: "open" });
       this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
@@ -26,13 +26,12 @@
 
     callAPI() {
       console.log(this.apiurl);
-      window.location = this.apiurl;
-//       $.ajax({
-//         url: this.apiurl,
-//         type: "POST",
-//         dataType: "jsonp",
-//         contentType: "application/x-www-form-urlencoded",
-//       });
+      $.ajax({
+        url: this.apiurl,
+        type: "GET",
+        dataType: "jsonp",
+        contentType: "application/x-www-form-urlencoded",
+      });
     }
 
     // Settings
