@@ -5,7 +5,7 @@
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
     </style>
     <img id="image" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
@@ -14,15 +14,11 @@
   class ImageAPICall extends HTMLElement {
     constructor() {
       super();
-      this.apiurl =
-        "https://camelot-itlab-gmbh-camelot-itlab-gmbh-cf-business-analy17752ce5.cfapps.eu10.hana.ondemand.com/bwd-spotify-get/newSpotifyData()";
 
       this._shadowRoot = this.attachShadow({ mode: "open" });
       this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
       this._props = {};
-
-      console.log(this._props);
 
       this.addEventListener("click", (event) => {
         var event = new Event("onClick");
@@ -37,22 +33,16 @@
 
     onCustomWidgetBeforeUpdate(changedProperties) {
       this._props = { ...this._props, ...changedProperties };
-      console.log("after");
-      console.log(changedProperties);
     }
 
     onCustomWidgetAfterUpdate(changedProperties) {
       this._props = { ...this._props, ...changedProperties };
-
-      console.log("before");
-      console.log(changedProperties);
 
       this._shadowRoot.getElementById("image").src =
         this._props.imageurl;
     }
 
     callAPI() {
-      console.log(this._props.apiurl);
       $.ajax({
         url: this._props.apiurl,
         type: "GET",
@@ -64,15 +54,11 @@
     // Settings
 
     set setAPIUrl(value) {
-      console.log(value);
       this._props.apiurl = value;
-      console.log(this._props.apiurl);
     }
 
     set imageUrl(value) {
-      console.log(value);
       this._shadowRoot.getElementById("image").src = value;
-      console.log(this._shadowRoot.getElementById("image").src);
     }
   }
 
