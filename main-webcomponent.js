@@ -42,7 +42,7 @@
     }
 
     set imageUrl(value) {
-      this._shadowRoot.getElementById("image").src = value;
+      this._shadowRoot.getElementById("image").value = value;
     }
   }
 
