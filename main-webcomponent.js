@@ -28,7 +28,7 @@
       console.log(this.apiurl);
       $.ajax({
         url: this.apiurl,
-        type: "GET",
+        type: "POST",
         dataType: "jsonp",
         contentType: "application/x-www-form-urlencoded",
       });
