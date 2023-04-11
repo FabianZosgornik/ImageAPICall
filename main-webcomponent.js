@@ -45,7 +45,7 @@
       console.log(changedProperties);
 
       this._shadowRoot.getElementById("image").src =
-        this.__props.imageurl;
+        this._props.imageurl;
     }
 
     callAPI() {
