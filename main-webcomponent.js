@@ -29,6 +29,7 @@
       $.ajax({
         url: this.apiurl,
         type: "GET",
+        dataType: "jsonp",
         contentType: "application/x-www-form-urlencoded",
       });
     }
