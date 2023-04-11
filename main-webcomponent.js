@@ -7,7 +7,7 @@
         height: 100%;
       }
     </style>
-    <img id="image" src="" alt="">
+    <img id="image" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
     `;
   
   class ImageAPICall extends HTMLElement {
