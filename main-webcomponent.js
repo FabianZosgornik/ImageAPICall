@@ -24,6 +24,8 @@
 
       this._props = {};
 
+      console.log(this._props);
+
       this.addEventListener("click", (event) => {
         var event = new Event("onClick");
         console.log(this._props);
@@ -48,8 +50,9 @@
       console.log("before");
       console.log(changedProperties);
 
-      this._shadowRoot.getElementById("image").src = value;
-      this._export_settings.apiurl = value;
+      this._shadowRoot.getElementById("image").src =
+        this._export_settings.imageurl;
+      this._export_settings.apiurl = this._export_settings.apiurl;
     }
 
     callAPI() {
