@@ -2,8 +2,10 @@
   let tmpl = document.createElement("template");
   tmpl.innerHTML = `
     <style>
-      image {
+      img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     </style>
     <img id="image" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="">
@@ -24,7 +26,7 @@
 
       this.addEventListener("click", (event) => {
         var event = new Event("onClick");
-        //this.callAPI();
+        this.callAPI();
         this.dispatchEvent(event);
       });
     }
