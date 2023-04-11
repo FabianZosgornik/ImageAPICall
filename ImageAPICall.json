@@ -1,0 +1,69 @@
+{
+  "name": "Image API Call",
+  "description": "A Custom Image Widget that calls an API when clicking on it",
+  "newInstancePrefix": "ImageAPICall",
+  "eula": "",
+  "vendor": "Fabian Zosgornik",
+  "license": "",
+  "id": "fabianzosgornik.imageapicall",
+  "version": "1.0.0",
+  "icon": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "custom-button",
+      "url": "https://kandpalpranav.github.io/CustomWidget/Webcomponent.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 192
+    },
+    "height": {
+      "type": "integer",
+      "default": 32
+    },
+    "apiurl": {
+      "type": "string",
+      "description": "API URL",
+      "default": ""
+    },
+    "imageurl": {
+      "type": "string",
+      "description": "Image URL",
+      "default": ""
+    }
+  },
+  "methods": {
+    "setAPIUrl": {
+      "description": "Set the API URL",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "The new API URL"
+        }
+      ],
+      "body": "this.apiurl = value;"
+    },
+    "setImageUrl": {
+      "description": "Set the Image URL",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "The new Image URL"
+        }
+      ],
+      "body": "this.imageurl = value;"
+    }
+  },
+  "events": {
+    "onClick": {
+      "description": "Called when the user clicks the button."
+    }
+  }
+}
