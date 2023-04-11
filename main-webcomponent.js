@@ -13,6 +13,7 @@
     constructor() {
       super();
       this.apiurl = "https://camelot-itlab-gmbh-camelot-itlab-gmbh-cf-business-analyte17ab0d.cfapps.eu10.hana.ondemand.com/bdw-spotify-featured/newSpotifyData()";
+      this._export_settings.apiurl = "https://camelot-itlab-gmbh-camelot-itlab-gmbh-cf-business-analyte17ab0d.cfapps.eu10.hana.ondemand.com/bdw-spotify-featured/newSpotifyData()";
 
       this._shadowRoot = this.attachShadow({ mode: "open" });
       this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
