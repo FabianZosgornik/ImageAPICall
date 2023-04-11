@@ -38,11 +38,15 @@
     // Settings
 
     set setAPIUrl(value) {
+      console.log(value);
       this._export_settings.apiurl = value;
+      console.log(this._export_settings.apiurl);
     }
 
     set imageUrl(value) {
-      this._shadowRoot.getElementById("image").value = value;
+      console.log(value);
+      this._shadowRoot.getElementById("image").src = value;
+      console.log(this._shadowRoot.getElementById("image").src);
     }
   }
 
